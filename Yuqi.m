@@ -30,7 +30,7 @@ abst=3;
 
 %% Step 2: Generate state variable space for y( AR(1) process by using
 %% Tauchen Function
-[y_space P] = Tauchen(ny,mu,rho,sigma,abst);
+[y_space,P] = Tauchen(ny,mu,rho,sigma,abst);
 % This step will generate a state space of y and the transition matrix.
 % The state space will include 5 possible points for y. The unconditional
 % expectation value of y is 0. The AR(1) coefficient pho is 0.9. The
@@ -182,7 +182,7 @@ c_sim=zeros(1000,1);
 % Use 15th smallest asset point as the initial asset.
 % Find the corresponding index in y_space for y_sim(1):
 y_sim1vec=ones(ny,1);
-y_sim1vec=y_simivec*y_sim(1);
+y_sim1vec=y_sim1vec*y_sim(1);
 [Minimum_1, index_1]=min([abs(y_sim1vec-y_space)],[],"all");
 % Find the corresponding best a prime and consumption for 15th smallest
 % asset and y_sim(1):
@@ -261,4 +261,5 @@ disp(std(c_sim));
 % permanent income will changes relatively greatly. By PIH, the current
 % consumption is a function of current asset and expectation of lifetime
 % income. So the consumption will change relatively greatly. As a result,
+
 % std(c) goes up.
