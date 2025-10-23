@@ -152,9 +152,8 @@ title('Plot of the Value of Function to Asset for all Income')
 %% given normal distribution and simulate the model for 1000 periods:
 %Set seeds:
 rng(2);
-% Function mormrnd: generate observations following normal
-% distribution with mean mu and standard deviation sigma.
-epsilon = normrnd(mu, sigma, [1000, 1]);
+% Generate normal distribution with mean mu and standard deviation sigma.
+epsilon = randn(1000,1)*sigma+mu;
 
 % Give y an initial value:
 y_sim = zeros(1000,1);
@@ -263,3 +262,4 @@ disp(std(c_sim));
 % income. So the consumption will change relatively greatly. As a result,
 
 % std(c) goes up.
+
