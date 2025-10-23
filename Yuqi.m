@@ -153,7 +153,7 @@ title('Plot of the Value of Function to Asset for all Income')
 %Set seeds:
 rng(2);
 % Generate normal distribution with mean mu and standard deviation sigma.
-epsilon = randn(1000,1)*sigma+mu;
+epsilon = randn(1000,1)*sigma+mu; % function randn(m,n) generates m by n matrix following standard normal distribution.
 
 % Give y an initial value:
 y_sim = zeros(1000,1);
@@ -262,4 +262,5 @@ disp(std(c_sim));
 % income. So the consumption will change relatively greatly. As a result,
 
 % std(c) goes up.
+
 
